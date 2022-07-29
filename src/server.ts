@@ -3,8 +3,7 @@ import dotenv from "dotenv";
 import mustache from "mustache-express";
 import path from "path";
 import mainRoutes from "./routes/index";
-import * as PageController from "../src/controllers/pageController";
-import * as SearchController from "../src/controllers/searchController";
+
 
 
 
@@ -22,7 +21,7 @@ server.use(express.static(path.join(__dirname, '../public')));
 server.use(mainRoutes);
 
 server.use((req, res) =>{
-    res.send("PÁGINA NÃO ENCONTRADA");
+    res.render('pages/404');
 });
     
 
